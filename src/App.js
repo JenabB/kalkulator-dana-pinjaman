@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, AppBar, Typography } from "@material-ui/core";
-import Flat from "./components/Flat";
+import Home from "./pages/Home";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -21,7 +21,7 @@ const App = () => {
         </Typography>
       </AppBar>
       <div className="App">
-        <Flat />
+        <Home />
       </div>
     </div>
   );

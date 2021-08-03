@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { makeStyles, AppBar, Typography } from "@material-ui/core";
+import Flat from "./components/Flat";
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    padding: "20px",
+    textAlign: "center",
+    marginBottom: "50px",
+  },
+}));
+
+const App = () => {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppBar position="static" className={classes.appBar}>
+        <Typography variant="h6" className={classes.title}>
+          Kalkulator Dana Pinjaman
+        </Typography>
+      </AppBar>
+      <div className="App">
+        <Flat />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

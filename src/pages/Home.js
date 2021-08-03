@@ -214,7 +214,9 @@ export default function Home() {
     const price = new Intl.NumberFormat("id-ID", {
       style: "currency",
       currency: "IDR",
-    }).format(nominal);
+    })
+      .format(nominal)
+      .replace(/(\.|,)00$/g, "");
     return price;
   };
 

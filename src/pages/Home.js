@@ -304,7 +304,9 @@ export default function Home() {
               />
             );
           case "efektif":
-            return <Efektif />;
+            return (
+              <Efektif dana={dana} tenor={tenor} persenBunga={persenBunga} />
+            );
           case "anuitas":
             return <Anuitas />;
           default:

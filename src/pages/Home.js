@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import { Slider, Typography, Tooltip } from "@material-ui/core"; //slider pada pendanaan
 import { Select, MenuItem, InputLabel } from "@material-ui/core"; //select pada pemilihan tenor
 import { Grid } from "@material-ui/core"; //untuk grid pada bunga, angsuran dan total
-
+import { GlobalContext } from "../context/GlobalState";
 import Flat from "../components/Flat";
 import {
   Radio,
@@ -186,6 +186,11 @@ const PersenBunga = withStyles({
 export default function Home() {
   const classes = useStyles();
 
+  const { getDana } = useContext(GlobalContext);
+
+  const testH = () => {
+    getDana(1 + 1);
+  };
   const [dana, setDana] = useState(1000000);
   const [tenor, setTenor] = useState(12);
   const [persenBunga, setPersenBunga] = useState(0.1);
@@ -228,7 +233,9 @@ export default function Home() {
 
   return (
     <div className="main-container">
-      <Typography gutterBottom>Dana Pinjaman</Typography>
+      <Typography gutterBottom onClick={testH}>
+        Dana Pinjaman
+      </Typography>
       <Typography gutterBottom>{formatRp(dana)}</Typography>
 
       <DanaPinjaman

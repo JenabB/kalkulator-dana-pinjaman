@@ -37,6 +37,7 @@ export default function Efektif({ dana, tenor, persenBunga }) {
   const [result, setResult] = useState([]);
 
   const [step, setStep] = useState(1);
+  // eslint-disable-next-line no-unused-vars
   const [saldoPokok, setSaldoPokok] = useState(360000000);
   const [angsuran, setAngsuran] = useState(0);
   const [bunga, setBunga] = useState(0);
@@ -60,6 +61,7 @@ export default function Efektif({ dana, tenor, persenBunga }) {
     };
   }
 
+  // eslint-disable-next-line
   useEffect(() => {
     if (step <= tenor) {
       setResult([
